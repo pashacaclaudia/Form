@@ -12,6 +12,18 @@
            name="sku"
            [formControl]="myForm.controls['sku']"
            class="form-control">
+
+
+
+     <label for="username">USERNAME</label>
+     <input type="text" id="username" name="username"
+     [formControl]="myForm.controls['username']"
+     class="form-control">
+
+     <label for="psw">PASSWORD </label>
+     <input type="password" id="psw" name="password"
+      [formControl]="myForm.controls['password']"
+     class="form-control">
    </div>
 
    <div *ngIf="!myForm.controls['sku'].valid"
@@ -20,9 +32,24 @@
    <div *ngIf="myForm.controls['sku'].hasError('required')"
          class="alert alert-danger">SKU is required
    </div>
+
+  <div *ngIf="!myForm.controls['username'].valid"
+         class="alert alert-danger">USERNAME is invalid
+   </div>
+   <div *ngIf="myForm.controls['username'].hasError('required')"
+         class="alert alert-danger">USERNAME is required
+   </div>
+   <div *ngIf="!myForm.controls['password'].valid"
+         class="alert alert-danger">PASSWORD is invalid
+   </div>
+   <div *ngIf="myForm.controls['password'].hasError('required')"
+         class="alert alert-danger">PASSWORD is required
+   </div>
    <button type="submit" class="btn btn-primary">Submit</button>
  </form>
 
+
  <div *ngIf="!myForm.valid"
- class="alert alert-danger">Form is invalid</div>
+ class="alert alert-danger">Form is invalid
+ </div>
 </div>
